@@ -23,7 +23,7 @@ type TaskStore struct {
 
 func (s *TaskStore) Create(ctx context.Context, task *Task) error {
 	query := `
-		INSERT INTO tasks (equipment, inventory, monster, note)
+		INSERT INTO tasks (equipment, inventory, monster, notes)
 		VALUES ($1, $2, $3, $4) RETURNING id, created_at, updated_at
 	`
 
